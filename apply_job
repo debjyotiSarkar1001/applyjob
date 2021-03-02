@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Jobs</title>
+    <link rel="stylesheet" href="style1.css" />
+    <script type="text/javascript">
+        function clickk(employed_flag) {
+            var dvemployee = document.getElementById("dvemployee");
+            dvemployee.style.display = employed_flag.checked ? "block" : "none";
+        }
+    </script>
+    <script>
+        function validateForm()
+        {
+            var a=document.forms["value_entry"]["first_name"].value;
+            let alp=/^[A-Za-z]+$/;
+            if(a.value.match(alp))
+            {
+            return true;
+            }
+            else
+            {
+                alert("Please enter  valid First Name");
+                return false;
+            }
+    
+            var b=document.forms["value_entry"]["last_name"].value;
+            if(b.value.match(alp))
+            {
+            return true;
+            }
+            else
+            {
+                alert("Last Name must be filled out");
+                return false;
+            }
+            var bb=document.forms["value_entry"]["email"].value;
+            if(bb=="")
+            {
+                alert("Email must be filled out");
+                return false;
+            }
+            var bbb=document.forms["value_entry"]["phone_num"].value;
+            if(bbb=="")
+            {
+                alert("Phone Number must be filled out");
+                return false;
+            }
+            var c=document.forms["value_entry"]["address"].value;
+            if(c=="")
+            {
+                alert("Address must be filled out");
+                return false;
+            }
+            var cc=document.forms["value_entry"]["city"].value;
+            if(cc=="")
+            {
+                alert("City must be filled out");
+                return false;
+            }   
+            var ccc=document.forms["value_entry"]["state"].value;    
+            if(ccc=="")
+            {
+                alert("State must be filled out");
+                return false;
+            } 
+    
+            var d=document.forms["value_entry"]["zip"].value;
+            if(d=="")
+            {
+                alert("Zip must be filled out");
+                return false;
+            }   
+    
+            var e=document.forms["value_entry"]["country_cd"].value;
+            if(e=="")
+            {
+                alert("Country must be Selected");
+                return false;
+            }   
+    
+            var ee=document.forms["value_entry"]["edu_level_cd"].value;
+            if(ee=="")
+            {
+                alert("Education Level must be Selected");
+                return false;
+            }
+    
+            var eee=document.forms["value_entry"]["edu_type_cd"].value;
+            if(eee=="")
+            {
+                alert("Education Type must be Selected");
+                return false;
+            }
+    
+            var f=document.forms["value_entry"]["resume_file_name"].value;
+            if(f=="")
+            {
+                alert("Resume file must be uploaded");
+                return false;
+            }  
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <h1>APPLY JOB</h1>
+    <form name="value_entry" action="./submitstatus.html" onsubmit="return validateForm();" method="GET">
+
+    </br></br>
+
+    <label class="control-label" for="first_name">first name:</label><span class="required">*</span><br>
+    <input type="text" id="first_name" name="data[first_name]"   class="form-control" pattern="[A-Za-z]{1,32}" required>
+    
+</br></br>
+
+<label class="control-label" for="last_name">last name:</label><span class="required">*</span><br>
+<input type="text" id="last_name" name="data[last_name]"  class="form-control" pattern="[A-Za-z]{1,32}" required>
+
+</br></br>
+
+<label class="control-label" for="email">email:</label><span class="required">*</span><br>
+<input type="text" id="email" name="data[email]" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+
+</br></br>
+
+<label class="control-label" for="phone_num">phone:</label><span class="required">*</span><br>
+<input type="text" id="phone_num" name="data[phone_num]" class="form-control"  pattern="[0-9]{10}" required>
+
+</br></br>
+
+<label class="control-label" for="address">address:</label><span class="required">*</span><br>
+<input type="text" id="address" name="data[address]" class="form-control" required>
+
+</br></br>
+
+<label class="control-label" for="city">city:</label><span class="required">*</span><br>
+<input type="text" id="city" name="data[city]" class="form-control" required>
+
+</br></br>
+
+<label class="control-label" for="state">state:</label><span class="required">*</span><br>
+<input type="text" id="state" name="data[state]" class="form-control" required>
+
+</br></br>
+
+<label class="control-label" for="zip">zip:</label><span class="required">*</span><br>
+<input type="text" id="zip" name="data[zip]" class="form-control" pattern="[0-9]{6}" required>
+
+</br></br>
+
+<label class="control-label" for="country_cd" class="control-label">country:</label><span class="required">*</span><br>
+    <select id="country_cd" name="country_cd" required>
+        <option value=""></option>
+        <option value="India">India</option>
+        <option value="United States of America">United States of America</option>
+        <option value="United Kingdom">United States of America</option>
+        <option value="Canada">Canada</option>
+        <option value="Australia">Australia</option>
+    </select>
+
+</br></br>
+
+<label class="control-label" for="edu_level_cd" class="control-label">education level:</label><span class="required">*</span><br>
+    <select id="edu_level_cd" name="edu_level_cd" required> 
+        <option value=""></option>
+        <option value="class 10">class 10</option>
+        <option value="class 12">class 12</option>
+        <option value="Diploma">United States of America</option>
+        <option value="Under Graduate">Canada</option>
+        <option value="Graduate">Australia</option>
+        <option value="Post Graduate">Australia</option>
+    </select>
+
+</br></br>
+
+<label class="control-label" for="edu_type_cd" class="control-label">education type:</label><span class="required">*</span><br>
+    <select id="edu_type_cd" name="edu_type_cd" required>
+        <option value=""></option>
+        <option value="Regular">class 10</option>
+        <option value="Distance">class 12</option>
+    </select>
+
+</br></br>
+
+<label for="resume_file_name">resume:</label><span class="required">*</span><br>
+  <input type="file" id="resume_file_name" name="resume_file_name" required>
+
+</br></br>
+
+<label class="control-label" for="cover_letter_text">cover letter</label><br>
+    <textarea id="cover_letter_text" name="cover_letter_text" required></textarea>
+
+</br></br>
+
+<input type="checkbox" id="employed_flag" name="employed_flag" value="employed_flag" onclick="clickk(this)" required>
+  <label for="employed_flag">are you employed?:</label><br>
+  <hr />
+  <div id="dvemployee" style="display: none">
+      
+        current employer:
+      <input type="text" id="current_employer_name" />
+      
+      years of experience:
+      <input type="number" id="years_of_exp" />
+      
+      <label for="jobs_apply">jobs you want to apply for:</label>
+      <select name="jobs_apply" id="jobs_apply" multiple>
+        <option value="programmer">programmer</option>
+        <option value="programmer analyst">programmer analyst</option>
+        <option value="developer">developer</option>
+        <option value="programmer analyst trainee">programmer analyst trainee</option>
+      </select>
+  </div>
+ 
+  <br><br>
+  <input type="submit" value="Submit">
+  </form>
+
+</form>
+</center>
+</body>
+</html>
